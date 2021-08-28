@@ -21,7 +21,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/thota18411/8-Week-SQL-Challenge">
-    <img src="3.png" width="500" height="550" alt="Logo">
+    <img src="3.png" width="500" height="530" alt="Logo">
   </a>
 
   <h3 align="center">CASE STUDY 3</h3>
