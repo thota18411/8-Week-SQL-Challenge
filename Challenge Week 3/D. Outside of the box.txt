@@ -1,0 +1,35 @@
+The following are open-ended questions that might be asked during a technical interview for this case study - there are no right or wrong answers, but answers that make sense from both a technical and a business perspective make an amazing impression!
+
+### 1. How would you calculate the rate of growth for Foodie-Fi?
+
+Compare the Revenue between 2020 and 2021
+
+Conversion Rate: Trial → Plan
+
+### 2. What key metrics would you recommend Foodie-Fi management to track over time to assess the performance of their overall business?
+
+Improve Bounce Rate: Plan, Trial → Churn
+
+Survey why the customer doesn't continue Plan
+
+### 3. What are some key customer journeys or experiences that you would analyze further to improve customer retention?
+
+Marketing Campaign
+
+Personal Experience
+
+### 4. If the Foodie-Fi team were to create an exit survey shown to customers who wish to cancel their subscription, what questions would you include in the survey?
+
+The reasons why they cancel the Plan (Price, Content, UI/UX, Customer service)
+
+How you want us to improve our Plan
+
+### 5. What business levers could the Foodie-Fi team use to reduce the customer churn rate? How would you validate the effectiveness of your ideas?
+
+Improve the Bounce Rate
+
+Personal Experience
+
+Customer Service
+
+## END!
