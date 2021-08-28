@@ -1,1 +1,7 @@
+## A. CUSTOMER JOURNEY:
 
+Customers can choose packages: trial, basic, pro monthly, pro annual
+
+- When using, if you want to upgrade to higher, start date after the higher package
+- When using, if you want to cancel, it will revert to the Churn package, starting after the expiration of the package you are using
+- When you want to downgrade, the start date after the higher package expires
