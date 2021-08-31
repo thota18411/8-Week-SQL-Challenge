@@ -66,7 +66,7 @@ This case study is all about calculating metrics, growth and helping the busines
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The Data Bank team have prepared a data model for this case study as well as a few example rows from the complete dataset below to get you familiar with their tables.
+The Data Bank team have prepared a data model for this case study as well as a few example rows from the complete dataset below to get you familiar with their tables. <br/>
 <img src="schema.png" >
   <ol>
     <li>
@@ -84,7 +84,7 @@ The Data Bank team have prepared a data model for this case study as well as a f
     </li>
   </ol>
 View Case study: 
-<link>https://8weeksqlchallenge.com/case-study-3/</link>
+<link>https://8weeksqlchallenge.com/case-study-4/</link>
 
 
 
