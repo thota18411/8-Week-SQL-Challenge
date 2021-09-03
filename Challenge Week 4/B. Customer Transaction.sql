@@ -40,4 +40,31 @@ SELECT customer_id,total_deposit,total_purchase,total_withdrawal,monthly,
 amount_end_month +(CASE WHEN amount_previous_month IS NULL THEN 0 ELSE amount_previous_month END) AS total_amount
 FROM t3
 
---5. 5. What is the percentage of customers who increase their closing balance by more than 5%? (Updating ...)
+--5. What is the percentage of customers who increase their closing balance by more than 5%? 
+WITH t1 AS (SELECT customer_id,DATE_PART('month',txn_date) AS monthly,
+SUM(CASE WHEN txn_type='deposit' THEN txn_amount ELSE 0 END) AS total_deposit,
+SUM(CASE WHEN txn_type='purchase' THEN txn_amount ELSE 0 END) AS total_purchase,
+SUM(CASE WHEN txn_type='withdrawal' THEN txn_amount ELSE 0 END) AS total_withdrawal   
+FROM data_bank.customer_transactions
+GROUP BY customer_id, monthly)
+,
+t2 AS (SELECT *,total_deposit-total_purchase-total_withdrawal AS amount_end_month
+FROM t1)
+,
+t3 AS (SELECT *,LAG(amount_end_month,1) OVER (PARTITION BY customer_id ORDER BY monthly) AS amount_previous_month
+FROM t2)
+,
+t4 AS(SELECT customer_id,total_deposit,total_purchase,total_withdrawal,monthly,
+amount_end_month +(CASE WHEN amount_previous_month IS NULL THEN 0 ELSE amount_previous_month END) AS closing_balance
+FROM t3)
+,
+t5 AS(SELECT customer_id,monthly,closing_balance,
+LEAD (closing_balance) OVER (PARTITION BY customer_id ORDER BY monthly) AS next_balance
+FROM t4)
+,
+t6 AS(SELECT customer_id,monthly,closing_balance,(CASE WHEN next_balance is  null OR closing_balance = 0 THEN 0 ELSE ROUND((1.0 * (next_balance - closing_balance)) / closing_balance,2) END) AS per
+FROM t5)
+
+SELECT ROUND(COUNT(per)*100/1720,2)
+FROM t6
+WHERE per>=5 OR per<=(-5)
