@@ -49,7 +49,7 @@ Danny’s Diner is in need of your assistance to help the restaurant stay afloat
 ## Available  Data
 
 The Data Bank team have prepared a data model for this case study as well as a few example rows from the complete dataset below to get you familiar with their tables. <br/>
-<img src="schema1.png" >
+<img src="schema1.PNG" >
   <ol>
     <li>
       Table 1: Sales
@@ -66,7 +66,7 @@ The Data Bank team have prepared a data model for this case study as well as a f
     </li>
   </ol>
 View Case study: 
-<link>https://8weeksqlchallenge.com/case-study-4/</link>
+<link>https://8weeksqlchallenge.com/case-study-1/</link>
 
 
 
