@@ -59,16 +59,12 @@ What can we do about future introduction of similar sustainability updates to th
 For this case study there is only a single table: data_mart.weekly_sales
 
 The Entity Relationship Diagram is shown below with the data types made clear, please note that there is only this one table - hence why it looks a little bit lonely!
-<img src="schema5.png" >
-  <ol>
+<img src="schema5.PNG" >
+ 
     <li>
       Table 1: Regions
     </li>
-  </ol>
-    
-      <ol>
-  
-  </ol>
+
 View Case study: 
 <link>https://8weeksqlchallenge.com/case-study-5/</link>
 
