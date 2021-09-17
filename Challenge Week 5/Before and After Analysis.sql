@@ -32,3 +32,28 @@ t2 AS(SELECT month_number,SUM(sales) as month_sale
           SUM(CASE WHEN month_number BETWEEN 6 AND 8 THEN month_sale END) as after_3m_change,
           SUM(CASE WHEN month_number BETWEEN 3 AND 5 THEN month_sale END)-SUM(CASE WHEN month_number BETWEEN 6 AND 8 THEN month_sale END) AS variance
           FROM t2
+	  
+--3. How do the sale metrics for these 2 periods before and after compare with the previous years in 2018 and 2019?--
+t2 AS(SELECT week_number,year_number,SUM(sales) as sales_week
+          FROM t1
+          WHERE week_number BETWEEN 21 AND 28
+          GROUP BY week_number,year_number)
+          
+          SELECT year_number,SUM(CASE WHEN week_number BETWEEN 21 AND 24 THEN sales_week END) AS before_4w,
+          SUM(CASE WHEN week_number BETWEEN 25 AND 28 THEN sales_week END) AS after_4w,
+          SUM(CASE WHEN week_number BETWEEN 25 AND 28 THEN sales_week END)-SUM(CASE WHEN week_number BETWEEN 21 AND 24 THEN sales_week END) as variance
+          FROM t2
+          GROUP BY year_number
+	  
+t2 AS(SELECT week_number,year_number,SUM(sales) as sales_week
+          FROM t1
+          WHERE week_number BETWEEN 13 AND 36
+          GROUP BY week_number,year_number)
+          
+          SELECT year_number,SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN sales_week END) AS before_4w,
+          SUM(CASE WHEN week_number BETWEEN 25 AND 36 THEN sales_week END) AS after_4w,
+          SUM(CASE WHEN week_number BETWEEN 25 AND 36 THEN sales_week END)-SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN sales_week END) as variance
+          FROM t2
+          GROUP BY year_number
+	  
+	  
